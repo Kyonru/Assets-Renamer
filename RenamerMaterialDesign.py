@@ -6,9 +6,8 @@ This is a temporary script file.
 """
 import sys
 import os
-#path = '/some/path/to/file'
-path = sys.argv[0] # 'some/path/to/file'
-filename = sys.argv[1] # 'foo'
+path = sys.argv[1] # /some/path/to/file/
+filename = sys.argv[2] # foo
 size = {
         'drawable-mdpi': filename + '.',
         'drawable-hdpi': filename + '@1.5x.',
@@ -17,11 +16,9 @@ size = {
         'drawable-xxxhdpi': filename + '@4x.'
         }
 
-path = path.split("'")
-path = ''.join(path)
-path += '/'
+print(path)
 for directory in os.listdir(path):
-    print (directory)    # do your stuff
+    print (directory)    # Current directory
     print(size[directory])
     for file in os.listdir(path+directory):
         name = file.split('.')
