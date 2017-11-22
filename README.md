@@ -6,7 +6,7 @@ Usage:
 
 1 - run python script 
 
-2 - past file path inside quotes (single quotes) of android folder
+2 - past file path of android folder inside quotes (single quotes)
 
 example:
 
