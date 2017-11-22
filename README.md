@@ -1,4 +1,4 @@
-# Assets-Renamer
+# Assets-Renamer python 2.7
 Scripts in python assets of material design to use on React Native
 
 
