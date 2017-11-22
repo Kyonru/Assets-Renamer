@@ -6,6 +6,7 @@ This is a temporary script file.
 """
 import sys
 import os
+
 path = sys.argv[1] # /some/path/to/file/
 filename = sys.argv[2] # foo
 size = {
