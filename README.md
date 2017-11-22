@@ -10,4 +10,5 @@ Usage:
 example:
 
 python RenamerMaterialDesign.py
+
 Escriba el path de la carpeta del icono: '/Users/exampple/Downloads/ic_accessibility_black_24dp/android'
