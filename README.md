@@ -5,6 +5,7 @@ Scripts in python assets of material design to use on React Native
 Usage:
 
 1 - run python script 
+
 2 - past file path inside quotes (single quotes) of android folder
 
 example:
