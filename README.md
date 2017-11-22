@@ -13,4 +13,5 @@ example:
 python RenamerMaterialDesign.py
 
 Path to material icon / android:
+
 /Users/exampple/Downloads/ic_accessibility_black_24dp/android'
