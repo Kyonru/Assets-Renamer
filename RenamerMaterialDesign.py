@@ -19,6 +19,8 @@ size = {
 
 print(path)
 for directory in os.listdir(path):
+    if directory[0] == '.':
+	continue
     print (directory)    # Current directory
     print(size[directory])
     for file in os.listdir(path+directory):
