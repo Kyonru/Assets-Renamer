@@ -6,7 +6,7 @@ This is a temporary script file.
 """
 import os
 #path = '/some/path/to/file'
-path = str(input('Escriba el path de la carpeta del icono'))
+path = str(input('Path to material icon / android: \n'))
 size = {
         'drawable-mdpi': '.',
         'drawable-hdpi': '@1.5x.',
