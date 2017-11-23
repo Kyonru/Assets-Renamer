@@ -23,7 +23,7 @@ if __name__ == '__main__':
             print "ERROR: Can't find path: " + args.path
             sys.exit(-1)
 
-        if not os.access('/path/to/folder', os.W_OK):
+        if not os.access(args.path, os.W_OK):
             print "ERROR: " + args.path + " is not writable."
             sys.exit(-1)
 
