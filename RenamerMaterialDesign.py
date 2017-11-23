@@ -9,7 +9,7 @@ import os
 import sys
 
 if __name__ == '__main__':
-    print "RenamerMaterialDesign.py - Raname your Android assets the easy way."
+    print "RenamerMaterialDesign.py - Rename your Android assets the easy way."
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--path", help="The Assets path.", required=True,
