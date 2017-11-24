@@ -1,17 +1,16 @@
-# Assets-Renamer python 2.7
-Scripts in python assets of material design to use on React Native
-
+## RenamerMaterialDesign.py
+### Rename your Android assets the easy way
 
 Usage:
 
-1 - run python script 
+`
+usage: RenamerMaterialDesign.py [-h] -p PATH -f FILENAME
+`
 
-2 - past file path of android folder inside quotes (single quotes)
+Example:
 
-example:
+`
+python RenamerMaterialDesign.py -p /Users/example/Downloads/ic_accessibility_black_24dp/android/ -f accessibility
 
-python RenamerMaterialDesign.py
-
-Path to material icon / android:
-
-/Users/exampple/Downloads/ic_accessibility_black_24dp/android'
+*Remember to add "/" at the end of the path.
+`

@@ -1,28 +1,49 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+RenamerMaterialDesign.py - Renaming your Android assets the easy way.
 
-This is a temporary script file.
+usage: python RenamerMaterialDesign.py [-h] -p PATH -f FILENAME
 """
+import argparse
 import os
-#path = '/some/path/to/file'
-path = str(input('Path to material icon / android: \n'))
-size = {
-        'drawable-mdpi': '.',
-        'drawable-hdpi': '@1.5x.',
-        'drawable-xhdpi': '@2x.',
-        'drawable-xxhdpi': '@3x.',
-        'drawable-xxxhdpi': '@4x.'
+import sys
+
+if __name__ == '__main__':
+    print "RenamerMaterialDesign.py - Rename your Android assets the easy way."
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--path", help="The Assets path.", required=True,
+                        dest="path")
+    parser.add_argument("-f", "--filename", help="Asset new filename pattern.",
+                        required=True, dest="filename")
+    args = parser.parse_args()
+
+    if args.path and args.filename:
+        if not os.path.isdir(args.path):
+            print "ERROR: Can't find path: " + args.path
+            sys.exit(-1)
+
+        if not os.access(args.path, os.W_OK):
+            print "ERROR: " + args.path + " is not writable."
+            sys.exit(-1)
+
+        size = {
+            'drawable-mdpi': args.filename + '.',
+            'drawable-hdpi': args.filename + '@1.5x.',
+            'drawable-xhdpi': args.filename + '@2x.',
+            'drawable-xxhdpi': args.filename + '@3x.',
+            'drawable-xxxhdpi': args.filename + '@4x.'
         }
 
-path = path.split("'")
-path = ''.join(path)
-path += '/'
-for directory in os.listdir(path):
-    print (directory)    # do your stuff
-    print(size[directory])
-    for file in os.listdir(path+directory):
-        name = file.split('.')
-        os.rename(path+directory+'/'+file, path+name[0][:-11]+size[directory]+name[1])
-#for filename in glob.glob(os.path.join(path, '*.txt')):
-            
+        print args.path  # Selected path
+
+        for directory in os.listdir(args.path):
+            if directory[0] == '.':
+                continue
+            print directory  # Current directory
+            print size[directory]
+            for asset in os.listdir(args.path + directory):
+                name = asset.split('.')
+                os.rename(args.path + directory + '/' + asset,
+                          args.path + size[directory] + name[1])
+        sys.exit(0)  # Everything run OK
