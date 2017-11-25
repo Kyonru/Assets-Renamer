@@ -2,7 +2,7 @@
 """
 RenamerMaterialDesign.py - Renaming your Android assets the easy way.
 
-usage: python RenamerMaterialDesign.py [-h] -p PATH -f FILENAME
+usage: python RenamerMaterialDesign.py [-h] -p PATH -f FILENAME [-d DESTINATION]
 """
 import argparse
 import os
