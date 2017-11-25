@@ -23,6 +23,7 @@ if __name__ == '__main__':
     if args.path and args.filename:
 
         path = os.path.abspath(args.path) + '/'
+        destination_path = os.getcwd() + '/'
 
         if not os.path.isdir(path):
             print "ERROR: Can't find path: " + path
@@ -40,9 +41,8 @@ if __name__ == '__main__':
             if not os.access(args.destination, os.W_OK):
                 print "ERROR: " + args.destination + " is not writable."
                 sys.exit(-1)
-            destinationPath = os.path.abspath(args.destination) + '/'
-        else:
-            destinationPath = os.getcwd() + '/'
+            destination_path = os.path.abspath(args.destination) + '/'
+
         size = {
             'drawable-mdpi': args.filename + '.',
             'drawable-hdpi': args.filename + '@1.5x.',
@@ -52,7 +52,7 @@ if __name__ == '__main__':
         }
 
         print 'We are looking the directory from: ' + path  # Selected path
-        print 'We are gonna put the files in this location: ' + destinationPath  # Selected destination
+        print 'We are gonna put the files in this location: ' + destination_path  # Selected destination
 
         for directory in os.listdir(path):
             if directory[0] == '.' or "drawable" not in directory:
@@ -62,5 +62,5 @@ if __name__ == '__main__':
             for asset in os.listdir(path + directory):
                 name = asset.split('.')
                 os.rename(path + directory + '/' + asset,
-                          destinationPath + size[directory] + name[1])
+                          destination_path + size[directory] + name[1])
         sys.exit(0)  # Everything run OK
