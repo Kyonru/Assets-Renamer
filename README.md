@@ -4,13 +4,12 @@
 Usage:
 
 `
-usage: RenamerMaterialDesign.py [-h] -p PATH -f FILENAME
+python RenamerMaterialDesign.py [-h] -p PATH -f FILENAME [-d DESTINATION]
 `
 
 Example:
 
 `
-python RenamerMaterialDesign.py -p /Users/example/Downloads/ic_accessibility_black_24dp/android/ -f accessibility
-
-*Remember to add "/" at the end of the path.
+python RenamerMaterialDesign.py -p ~/Downloads/ic_accessibility_black_24dp/android/ -f accessibility
 `
+
