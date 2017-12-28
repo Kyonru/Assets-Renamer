@@ -44,18 +44,28 @@ if __name__ == '__main__':
             destination_path = os.path.abspath(args.destination) + '/'
 
         size = {
+            'mdpi': args.filename + '.',
             'drawable-mdpi': args.filename + '.',
+            'drawable-ldrtl-mdpi': args.filename + '-ldrtl.',
+            'hdpi': args.filename + '@1.5x.',
             'drawable-hdpi': args.filename + '@1.5x.',
+            'drawable-ldrtl-hdpi': args.filename + '-ldrtl@1.5x.',
+            'xhdpi': args.filename + '@2x.',
             'drawable-xhdpi': args.filename + '@2x.',
+            'drawable-ldrtl-xhdpi': args.filename + '-ldrtl@2x.',
+            'xxhdpi': args.filename + '@3x.',
             'drawable-xxhdpi': args.filename + '@3x.',
-            'drawable-xxxhdpi': args.filename + '@4x.'
+            'drawable-ldrtl-xxhdpi': args.filename + '-ldrtl@3x.',
+            'xxxhdpi': args.filename + '@4x.',
+            'drawable-xxxhdpi': args.filename + '@4x.',
+            'drawable-ldrtl-xxxhdpi': args.filename + '-ldrtl@4x.'
         }
 
         print 'We are looking the directory from: ' + path  # Selected path
         print 'We are gonna put the files in this location: ' + destination_path  # Selected destination
 
         for directory in os.listdir(path):
-            if directory[0] == '.' or "drawable" not in directory:
+            if directory[0] == '.' or directory not in size:
                 continue
             print directory  # Current directory
             print size[directory]
