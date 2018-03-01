@@ -44,6 +44,9 @@ if __name__ == '__main__':
             destination_path = os.path.abspath(args.destination) + '/'
 
         size = {
+            'ldpi': args.filename + '@0.75x.',
+            'drawable-ldpi': args.filename + '@0.75x.',
+            'drawable-ldrtl-ldpi': args.filename + '-ldrtl@0.75x.',
             'mdpi': args.filename + '.',
             'drawable-mdpi': args.filename + '.',
             'drawable-ldrtl-mdpi': args.filename + '-ldrtl.',
