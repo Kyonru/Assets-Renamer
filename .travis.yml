@@ -2,4 +2,4 @@ language: python
 python:
   - "2.7"
 script:
-  - python tests.py
+  - python RenamerMaterialDesign.py -p ./tests/ic_videogame_asset_black_24dp/android -f ic_videogame_asset -d ./tests/
